@@ -13,12 +13,10 @@ class PostController {
 		if (auth.user) {
 			const post = new Post();
 
-			var sluged = slugify(title);
-
 			post.fill({
 				title,
 				body,
-				slug: sluged,
+				slug: slugify(title),
 				tag_id: 1,
 				user_id: auth.user.id
 			});
