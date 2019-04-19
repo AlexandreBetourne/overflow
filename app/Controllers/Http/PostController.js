@@ -10,22 +10,25 @@ class PostController {
 
 	async createPost({ auth, request, session, response }) {
 		const { title, body, tag } = request.all();
+		if (auth.user) {
+			const post = new Post();
 
-		const post = new Post();
+			var sluged = slugify(title);
 
-		var sluged = slugify(title);
+			post.fill({
+				title,
+				body,
+				slug: sluged,
+				tag_id: 1,
+				user_id: auth.user.id
+			});
 
-		post.fill({
-			title,
-			body,
-			slug: sluged,
-			tag_id: 1,
-			user_id: auth.user.id
-		});
+			await post.save();
 
-		await post.save();
-
-		return slugify(title);
+			return response.route("home");
+		} else {
+			return response.route("login");
+		}
 	}
 }
 

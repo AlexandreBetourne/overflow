@@ -6,7 +6,7 @@ const Route = use("Route");
 Route.on("/")
 	.render("home")
 	.as("home");
-Route.get("login", "UserController.index");
+Route.get("login", "UserController.index").as("login");
 Route.post("login", "UserController.login")
 	.middleware("guest")
 	.as("auth.login");
