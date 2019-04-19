@@ -1,0 +1,14 @@
+.button.is-primary {
+  background: #f90 !important;
+  color: black;
+}
+
+.button.is-info.is-outlined {
+  border-color: #f90;
+  color: #f90;
+}
+
+.button.is-info.is-outlined:focus, .button.is-info.is-outlined:hover {
+  background-color: #f90;
+  border-color: #f90;
+}
