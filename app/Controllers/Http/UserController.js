@@ -33,16 +33,10 @@ class UserController {
 		});
 
 		await user.save();
+		await auth.attempt(email, password);
 
-		return "Welcome" + username;
+		return response.route("home");
 	}
-
-	// show ({ auth, params }) {
-	//   if (auth.user.id !== Number(params.id)) {
-	//     return "You cannot see someone else's profile"
-	//   }
-	//   return auth.user
-	// }
 }
 
 module.exports = UserController;

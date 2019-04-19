@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Hello Adonis</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    {{ style('style') }}
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar is-white topNav">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="../">
+            <img src="{{ assetsUrl('logo.png') }}" >
+          </a>
+          <div class="navbar-burger burger" data-target="topNav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div id="topNav" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="cover.html">Home</a>
+            <a class="navbar-item" href="landing.html">Landing</a>
+            <a class="navbar-item" href="blog.html">Blog</a>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="field is-grouped">
+                <p class="control">
+                  <a class="button is-small">
+                    <span class="icon">
+                      <i class="fa fa-user-plus"></i>
+                    </span>
+                    <span>
+                      Register
+                    </span>
+                  </a>
+                </p>
+                <p class="control">
+                  <a class="button is-small is-info is-outlined">
+                    <span class="icon">
+                      <i class="fa fa-user"></i>
+                    </span>
+                    <span>Login</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <nav class="navbar is-white">
+      <div class="container">
+        <div class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item is-active" href="#">Popular</a>
+            <a class="navbar-item" href="#">Recent</a>
+            <a class="navbar-item" href="#">Rising</a>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <input class="input" type="search" placeholder="Search forum...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="container">
+
+    <div class="content ">
+      <div class="columns">
+        <div class="column">
+          <h1>Create post</h1>
+          <form action="{{ route('post.create') }}" method="post">
+            {{ csrfField() }}
+            <input type="hidden" name="user_id" value="">
+            <div class="field">
+              <label class="label">Title</label>
+              <div class="control">
+                <input class="input" type="text" name="title" placeholder="Text input" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Message</label>
+              <div class="control">
+                <textarea class="textarea" name="body" placeholder="Textarea" required></textarea>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Tag</label>
+              <div class="control">
+                <div class="select">
+                  <select name="tag">
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-link" type="submit">Submit</button>
+              </div>
+              <div class="control">
+                <button class="button is-text">Cancel</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+
+</body>
+
+</html>

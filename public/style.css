@@ -1,3 +1,12 @@
+html, body {
+  font-family: 'Open Sans', serif;
+  background: #F2F6FA;
+}
+
+footer {
+  background-color: #F2F6FA !important;
+}
+
 .button.is-primary {
   background: #f90 !important;
   color: black;
@@ -11,4 +20,31 @@
 .button.is-info.is-outlined:focus, .button.is-info.is-outlined:hover {
   background-color: #f90;
   border-color: #f90;
+}
+
+.button.is-link {
+  background-color: #f90;
+  color: black;
+}
+
+.button.is-link:hover {
+  background-color: white;
+  border-color: #f90;
+  color: #f90;
+}
+
+.topNav {
+  border-top: 5px solid #f90;
+}
+
+.topNav .container {
+  border-bottom: 1px solid #E6EAEE;
+}
+
+.container .columns {
+  margin: 3rem 0;
+}
+
+.navbar-menu .navbar-item {
+  padding: 0 2rem;
 }
