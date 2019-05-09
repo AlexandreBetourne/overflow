@@ -30,12 +30,18 @@
               </form>
 
               <p class="control">
+                @if(auth.user != null)
+                  <p>{{auth.user.username}}</p>
+                @else
                 <a class="button is-small is-info is-outlined" href="login">
                   <span class="icon">
                     <i class="fa fa-user"></i>
                   </span>
                   <span>Log</span>
                 </a>
+                @endif
+
+
               </p>
             </div>
           </div>
