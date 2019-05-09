@@ -5,56 +5,15 @@
   <meta charset="UTF-8" />
   <title>Hello Adonis</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
   {{ style('style') }}
   {{ style('overflow') }}
 </head>
 
-<body>
-  <header>
-    <nav class="navbar is-white topNav">
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="../">
-            <img src="{{ assetsUrl('logo.png') }}">
-          </a>
-          <div class="navbar-burger burger" data-target="topNav">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-        <div id="topNav" class="navbar-menu">
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a class="button is-small" href="login">
-                    <span class="icon">
-                      <i class="fa fa-user-plus"></i>
-                    </span>
-                    <span>
-                      Register
-                    </span>
-                  </a>
-                </p>
-                <p class="control">
-                  <a class="button is-small is-info is-outlined" href="login">
-                    <span class="icon">
-                      <i class="fa fa-user"></i>
-                    </span>
-                    <span>Login</span>
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
+<body id="post">
+  @include('layout.header')
 
   <section class="hero is-info is-medium is-bold">
     <div class="hero-body">

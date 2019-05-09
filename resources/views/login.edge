@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Hello Adonis</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
   {{ style('style') }}
@@ -15,12 +15,13 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
-                    <h3 class="title has-text-grey">Login</h3>
-                    <p class="subtitle has-text-grey">Please login to proceed.</p>
+                  <a href="/">
+                    <img src="{{ assetsUrl('logo.png') }}">
+                  </a>
+
+                    <h3 class="title has-text-grey">Login or Signin</h3>
+                    <p class="subtitle has-text-grey">Please login or sign in to proceed.</p>
                     <div class="box">
-                        <figure class="avatar">
-                            <img src="https://direct.rhapsody.com/imageserver/images/Alb.313905200/500x500.jpg">
-                        </figure>
                         <form action="{{ route('auth.login') }}" method="post">
                           {{ csrfField() }}
                             <div class="field">
@@ -48,7 +49,7 @@
                                 {{ elIf('<p class="help is-danger has-text-left	">$self</p>', getErrorFor('password'), hasErrorFor('password')) }}
                             </div>
 
-                            <button class="button is-block is-info is-large is-fullwidth">Login</button>
+                            <button class="button is-block is-info is-large is-fullwidth is-primary">Login / Signin</button>
                         </form>
                     </div>
                 </div>

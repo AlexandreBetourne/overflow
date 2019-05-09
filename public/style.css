@@ -49,6 +49,6 @@ footer {
   padding: 0 2rem;
 }
 
-.hero-body, .articles .tag.is-info {
+#post .hero-body, #post .articles .tag.is-info {
   background-color: #f90;
 }

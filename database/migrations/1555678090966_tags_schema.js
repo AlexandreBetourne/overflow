@@ -8,14 +8,8 @@ class TagsSchema extends Schema {
 		this.create("tags", table => {
 			table.increments();
 			table.timestamps();
-			table
-				.string("slug")
-				.notNullable()
-				.unique();
-			table
-				.string("name")
-				.notNullable()
-				.unique();
+			table.string("slug").notNullable().unique();
+			table.string("name").notNullable().unique();
 		});
 	}
 

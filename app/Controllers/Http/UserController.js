@@ -37,6 +37,14 @@ class UserController {
 
 		return response.route("home");
 	}
+
+	async logout({ auth, response }) {
+		await auth.logout()
+
+		console.log("logout");
+
+		return response.route("home");
+	}
 }
 
 module.exports = UserController;

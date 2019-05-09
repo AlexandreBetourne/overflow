@@ -6,8 +6,13 @@ const slugify = require("slugify");
 const moment = require('moment');
 
 class PostController {
-	index({ view }) {
-		return view.render("createPost");
+	index({ auth, view, response }) {
+		if (auth.user) {
+			return view.render("createPost");
+		} else {
+			return response.route("login");
+		}
+
 	}
 
 	async createPost({ auth, request, session, response }) {
