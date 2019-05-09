@@ -28,6 +28,11 @@ class PostController {
 			return response.route("login");
 		}
 	}
+
+	async getPost() {
+		const post = new Post();
+		return Post.all()
+	}
 }
 
 module.exports = PostController;
