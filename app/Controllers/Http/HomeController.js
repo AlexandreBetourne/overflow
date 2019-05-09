@@ -3,6 +3,7 @@
 const Post = use("App/Models/Post");
 const User = use("App/Models/User");
 const axios = require('axios');
+const moment = require('moment');
 
 
 class HomeController {
@@ -19,12 +20,13 @@ class HomeController {
 		postsPromise.rows.forEach(p => {
 			users.forEach(u => {
 				if (u.id === p.$attributes.user_id) {
+					var updated = moment(p.$attributes.updated_at).startOf('day').fromNow()
 					posts.push({
 						title: p.$attributes.title,
 						body: p.$attributes.body,
 						user: u.username,
 						href: p.$attributes.slug,
-						update: p.$attributes.updated_at
+						updated
 					})
 				}
 			})
