@@ -1,7 +1,9 @@
 "use strict";
 
 const Post = use("App/Models/Post");
+const User = use("App/Models/User");
 const slugify = require("slugify");
+const moment = require('moment');
 
 class PostController {
 	index({ view }) {
@@ -29,9 +31,39 @@ class PostController {
 		}
 	}
 
-	async getPost() {
-		const post = new Post();
-		return Post.all()
+	async getPost({ params, view }) {
+		var postsPromise = await Post.query().fetch()
+		var usersPromise = await User.query().fetch()
+		var post = "hello"
+		var users = []
+
+		usersPromise.rows.forEach(u => {
+			users.push(u.$attributes)
+		})
+
+		postsPromise.rows.forEach(p => {
+
+			if (params.name === p.$attributes.slug) {
+
+				users.forEach(u => {
+
+					if (u.id === p.$attributes.user_id) {
+
+						var updated = moment(p.$attributes.updated_at).calendar()
+
+						post = {
+							title: p.$attributes.title,
+							body: p.$attributes.body,
+							user: u.username,
+							href: p.$attributes.slug,
+							updated
+						}
+					}
+				})
+			}
+		})
+
+		return view.render("post", { post: post });
 	}
 }
 

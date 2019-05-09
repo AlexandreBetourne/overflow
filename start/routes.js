@@ -10,4 +10,4 @@ Route.post("login", "UserController.login").middleware("guest").as("auth.login")
 
 Route.get("createPost", "PostController.index");
 Route.post("createPost", "PostController.createPost").as("post.create");
-Route.get("getPosts", "PostController.getPost").as("posts.get");
+Route.get("post/:name", "PostController.getPost").as("post.get");

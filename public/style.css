@@ -48,3 +48,7 @@ footer {
 .navbar-menu .navbar-item {
   padding: 0 2rem;
 }
+
+.hero-body, .articles .tag.is-info {
+  background-color: #f90;
+}

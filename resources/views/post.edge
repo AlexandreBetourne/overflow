@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello Adonis</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  {{ style('style') }}
+  {{ style('overflow') }}
+</head>
+
+<body>
+  <header>
+    <nav class="navbar is-white topNav">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="../">
+            <img src="{{ assetsUrl('logo.png') }}">
+          </a>
+          <div class="navbar-burger burger" data-target="topNav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div id="topNav" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="field is-grouped">
+                <p class="control">
+                  <a class="button is-small" href="login">
+                    <span class="icon">
+                      <i class="fa fa-user-plus"></i>
+                    </span>
+                    <span>
+                      Register
+                    </span>
+                  </a>
+                </p>
+                <p class="control">
+                  <a class="button is-small is-info is-outlined" href="login">
+                    <span class="icon">
+                      <i class="fa fa-user"></i>
+                    </span>
+                    <span>Login</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero is-info is-medium is-bold">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">{{post.title}}</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="articles">
+    <div class="column is-8 is-offset-2">
+      <div class="card article">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content has-text-centered">
+              <div class="tags has-addons level-item">
+                <span class="tag is-rounded is-info">@ {{post.user}}</span>
+                <span class="tag is-rounded">{{post.updated}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="content article-body">
+            <p>{{post.body}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
